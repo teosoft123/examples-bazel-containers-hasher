@@ -5,7 +5,7 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_push")
 go_library(
     name = "go_default_library",
     srcs = ["main.go"],
-    importpath = "github.com/schoren/example-bazel-containers-hasher/cmd/api",
+    importpath = "github.com/tesoft123/example-bazel-containers-hasher/cmd/api",
     visibility = ["//visibility:private"],
     deps = [
         "@com_github_gorilla_mux//:go_default_library",
@@ -24,7 +24,7 @@ container_image(
     base = "@alpine_linux_amd64//image",
     entrypoint = ["/api"],
     files = [":api"],
-    repository = "speak2jc"
+    repository = "teosoft123",
 )
 
 container_push(
@@ -32,5 +32,5 @@ container_push(
     format = "Docker",
     image = ":image",
     registry = "index.docker.io",
-    repository = "speak2jc/cmd-api",
+    repository = "teosoft123/cmd-api",
 )
